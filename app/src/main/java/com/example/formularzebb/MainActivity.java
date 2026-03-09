@@ -1,6 +1,7 @@
 package com.example.formularzebb;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         editTextImie = findViewById(R.id.imie);
         editTextWaga = findViewById(R.id.waga);
 
-        spinnerGromada = findViewById(R.id.gromada);
+        spinnerGromada = findViewById(R.id.gromada1);
 
         checkBoxWymarle = findViewById(R.id.wymarle);
         checkBoxMiesko = findViewById(R.id.mieso);
@@ -51,6 +52,18 @@ public class MainActivity extends AppCompatActivity {
         textViewKominukat = findViewById(R.id.textViewKomunikat);
 
 
+        buttonDodaj.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String imie = editTextImie.getText().toString();
+                        String gromada = spinnerGromada.getSelectedItem().toString();
+
+
+                        textViewKominukat.setText("Imię "+ imie+ "Gromada: "+gromada);
+                    }
+                }
+        );
 
     }
 }
