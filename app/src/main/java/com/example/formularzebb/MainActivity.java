@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         String imie = editTextImie.getText().toString();
                         String gromada = spinnerGromada.getSelectedItem().toString();
+                        int wiek = seekBar.getProgress();
+                        //isChecked
+                        int waga = Integer.parseInt(editTextWaga.getText().toString());
 
 
                         textViewKominukat.setText("Imię "+ imie+ "Gromada: "+gromada);
